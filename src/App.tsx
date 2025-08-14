@@ -9,7 +9,11 @@ function App() {
 
    <div>
      <div>{count}</div>
-     <button onClick={() => setCount(count + 1)}>+</button>
+       <div>
+           <button disabled={count === 0 ? true : false} onClick={() => setCount(count - 1)}>-</button>
+           <button onClick={() => setCount(count + 1)}>+</button>
+       </div>
+
    </div>
   )
 }
