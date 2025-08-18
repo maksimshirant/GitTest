@@ -11,24 +11,26 @@ interface PostProps {
     body: string,
 }
 
+const getData = async (url: string) => {
+        const response = await axios.get(url)
+        return response.data
+
+}
+
 function App() {
 
     const {data, isLoading} = useQuery({
         queryKey: ['posts'],
-        queryFn: async () => {
-          const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-            return response.data
-        }
+        queryFn: () => getData('https://jsonplaceholder.typicode.com/posts')
     })
   return (
 
    <div>
        {!isLoading ? (data.map((post: PostProps) => (
-           <div>
-               <div key={post.id}>{post.id}</div>
-               <div>
+           <div className='post_container'>
+               <div key={post.id}>{post.id}.</div>
+               <div className='post_text_container'>
                    <div>{post.title}</div>
-                   <div>{post.body}</div>
                </div>
 
            </div>

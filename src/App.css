@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+.post_container {
+  display: flex;
+  border: 1px solid #f9f9f9;
+  margin: 15px 0
+}
+.post_text_container {
+  display: flex;
+}
