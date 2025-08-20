@@ -10,6 +10,7 @@ const UserList = () => {
         staleTime: 1000 * 60 * 5,
     })
 
+
     if (isLoading) return <div>Загрузка пользователей...</div>;
     if (isError) return <div>Ошибка при загрузке данных</div>;
     return (
